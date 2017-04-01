@@ -39,7 +39,7 @@
 							</div>
 					<div class="panel-body">
 						<p>
-							<input type="submit" name="upload" value="Browse"/>
+							<input class="btn btn-primary" type="submit" name="upload" value="Browse"/>
 								</div>
 							</div>
 
@@ -60,7 +60,7 @@
               <div class="form-group">
               <label for="comment">Write Notes:</label>
               <textarea method ="POST" name="txt" class="form-control" onfocus="this.select()" rows="5" id="comment"></textarea>
-              <input type="submit"/>
+              <input class="btn btn-success" type="submit"/>
               </div>
 						</form>
 					</div>

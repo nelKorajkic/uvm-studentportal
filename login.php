@@ -1,5 +1,6 @@
 <?php 
 	require("includes/top.php");
+	$_SESSION['user'] = isset($_SESSION['user']) ? $_SESSION['user'] : "";
 	if(!$_SESSION['user']):
 		$submit = (isset($_POST["btnLogIn"])) ? $_POST["btnLogIn"] : "";
 		if($submit == "Log In"){

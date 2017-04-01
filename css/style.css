@@ -1,8 +1,9 @@
-* {
+*
+{
   font-family: 'Fjalla One', sans-serif;
 }
 
-#rightFloat
+.nav
 {
-  float: right;
+  color: blue;
 }

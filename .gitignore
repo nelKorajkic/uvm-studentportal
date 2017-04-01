@@ -3,3 +3,4 @@ launchConfigurations/
 /response.json
 /vcap.json
 .vscode/
+/nbproject/private/

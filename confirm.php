@@ -8,24 +8,30 @@ $to = $stuId . '@uvm.edu';
 $crn = $_GET['crn'];
 $professorNetId = $_GET['pro'];
 
-print "<h2>" . $stuName . " is notetaker for " . $className . "</h2>";
+print "<h2>" . $stuName . " is note taker for " . $className . "</h2>";
 
 
 
 $message = "
 <html>
 <head>
-<title>Notetaker Application Approved</title>
+<title>Notaker Application Approved</title>
 </head>
 <body>
 <pre style='font-family: sans-serif'>
-Hi, 
+Greetings,
 
-You are a notetaker for $className
-    
-Best, 
+You have successfully registered for $className as a note taker.
+To log in, please click the link below:
 
-Notetaker App
+----------------------------------
+
+<a href='http://localhost/uvm-studentportal/login.php'>Log in to NoTaker</a>
+
+----------------------------------
+
+Thank you for registering. 
+
 </pre> 
 
 </body>

@@ -20,6 +20,7 @@
 	<div class="row">
 		<div class="col-sm-12"  style="margin-top: 30px">
 			<h4 class="text-center">Thank you for using our service.</h4>
+			<p class="text-center">Click <a href="login.php">here</a> to log in again</p>
 		</div>
 	</div>
 </div>

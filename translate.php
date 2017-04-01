@@ -20,7 +20,10 @@ try {
     $db->rollBack();
     echo $e->getMessage();
 }
-
-echo watsonLanguageTranslate("en", $lan, urlencode($results[0]['fldText']));
+if($lan !== "en"){
+    echo watsonLanguageTranslate("en", $lan, urlencode($results[0]['fldText']));
+}else{
+    echo $results[0]['fldText'];
+}
 ?>
 

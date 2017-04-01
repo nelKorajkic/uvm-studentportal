@@ -56,7 +56,7 @@ try {
 //echo "<br>";
 $json = watsonNaturalLanguageUnderstanding(urlencode($results[0]['fldText']));
 $temp = json_decode($json, true);
-?>  
+?>
 <form class="form-horizontal">
     <div class="form-group">
         <label for="" class="control-label col-sm-4">Select Language</label>
@@ -74,6 +74,25 @@ $temp = json_decode($json, true);
     <p class="text-center" id="txtTranslate"><?php echo $results[0]['fldText']; ?></p>
 </div>
 
+<table class="table table-default">
+    <thead>
+        <tr>
+            <th>Keyword</th>
+            <th>Relevance</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <?php
+            foreach($temp['keywords'] as $k){
+                echo "<tr>";
+                   echo "<td>$k[text]</td>";
+                   echo "<td>$k[relevance]</td>";
+                echo "</tr>";
+            }
+        ?>
+    </tbody>
+</table>
 <?php
 require("includes/footer.php");
 ?>

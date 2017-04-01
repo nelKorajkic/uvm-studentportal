@@ -1,9 +1,11 @@
 <?php
+
 include 'includes/top.php';
 $className = $_GET['class'];
 $stuName = $_GET['stuName'];
 $stuId = $_GET['stuId'];
 $to = $stuId . '@uvm.edu';
+$crn = $_GET['crn'];
 $professorNetId = $_GET['pro'];
 
 print "<h2>" . $stuName . " is notetaker for " . $className . "</h2>";
@@ -42,13 +44,17 @@ mail($to, $subject, $message, $headers);
 
 try {
     $db->beginTransaction();
-    $query = "";
+    $query = "INSERT INTO tblUsersClasses (fldNoteTaker, fnkNetId, fnkCourseId) VALUES ('T', '" . $stuId . "'," . $crn . ")";
+    echo $stuId;
+    echo $crn;
+    //SET fldNoteTaker = 'T' WHERE fnkNetId = '" . $stuId ."' AND fnkCourseId = '" . $crn . "'";
     $statement = $db->prepare($query);
     $statement->execute();
-    $classInfo = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->fetchAll(PDO::FETCH_ASSOC);
     $db->commit();
 } catch (PDOException $e) {
     $db->rollBack();
     echo $e->getMessage();
 }
-include 'includes/footer.php' ?>
+include 'includes/footer.php'
+?>

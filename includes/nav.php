@@ -21,16 +21,19 @@
   </a>
 
 
+  	<a type="button" id="floatRight" class="btn btn-default" href="login.php">
+    	<span aria-hidden="true">Login</span>
+  	</a>
 
-  <a type="button" id="floatRight" class="btn btn-default" href="login.php">
-    <span aria-hidden="true">Login</span>
-  </a>
+		<a type="button" id="floatRight" class="btn btn-default" href="login.php">
+    	<span aria-hidden="true">Logout</span>
+  	</a>
 
 
-<?php
-	if (isset($_SESSION['user'])): ?>
-  <a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">
-    <span aria-hidden="true">Upload</span>
-  </a>
-<?php endif; ?>
+	<?php if (isset($_SESSION['user'])): ?>
+  	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">
+    	<span aria-hidden="true">Upload</span>
+  	</a>
+	<?php endif; ?>
+
 </nav>

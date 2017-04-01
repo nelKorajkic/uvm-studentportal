@@ -42,7 +42,11 @@
 							<input type="submit" name="upload" value="Browse"/>
 								</div>
 							</div>
-
+              <div class="form-group">
+              <label for="comment">Write Notes:</label>
+              <textarea method ="POST" name="txt" class="form-control" onfocus="this.select()" rows="5" id="comment"></textarea>
+              <input type="submit"/>
+              </div>
 						</form>
 					</div>
 
@@ -56,16 +60,6 @@
 <?php require("includes/footer.php"); ?>
 
 <br>
-<tr>
-	<td align="center">
 
-         <textarea method ="POST" name="txt" rows="28" cols="150" onfocus="this.select()"></textarea>
-         <br>
-         <input type="submit"/>
-         </td>
-         </tr>
-
-
-</form>
 
 <?php require("includes/footer.php"); ?>

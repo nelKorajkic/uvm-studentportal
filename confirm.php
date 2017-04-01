@@ -17,7 +17,7 @@ $message = "
 <head>
 <title>Notaker Application Approved</title>
 </head>
-<body id="centerEmail">
+<body id='centerEmail'>
 <pre style='font-family: sans-serif'>
 Greetings,
 

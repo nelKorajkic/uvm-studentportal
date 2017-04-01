@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="jumbotron text-center">
   <h1>Thanks for using NoTaker!</h1>
-  <p>Click on the button below to log in again</p>
+  <p>Click on the button below to log in again.</p>
   <p><a class="btn btn-primary btn-lg" href="login.php" role="button">Login</a></p>
 		</div>
 	</div>

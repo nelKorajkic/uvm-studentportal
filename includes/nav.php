@@ -1,17 +1,17 @@
 <nav id="nav">
-  <button type="button" class="btn btn-default" aria-label="Left Align">
+  <a type="button" class="btn btn-default" aria-label="Left Align">
     <span aria-hidden="true">Logo</span>
-  </button>
+  </a>
 
-  <button type="button" class="btn btn-default" aria-label="Left Align">
+  <a type="button" class="btn btn-default" aria-label="Left Align">
     <span aria-hidden="true">Upload</span>
-  </button>
+  </a>
 
-  <button type="button" class="btn btn-default">
+  <a type="button" class="btn btn-default">
     <span aria-hidden="true">Become a Notaker</span>
-  </button>
+  </a>
 
-  <button type="button" class="btn btn-default">
+  <a type="button" class="btn btn-default" href="login.php">
     <span aria-hidden="true">Login</span>
-  </button>
+  </a>
 </nav>

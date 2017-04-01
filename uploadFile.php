@@ -2,7 +2,7 @@
       require("includes/nav.php");
       ?>
 
-<form action="viewFile.php" method="POST" enctype="multipart/form-data">
+<form action="addFile.php" method="POST" enctype="multipart/form-data">
 
 <table align="center">
 <body id = 'login'>
@@ -42,6 +42,13 @@
 							<input type="submit" name="upload" value="Browse"/>
 								</div>
 							</div>
+                            
+              <div class="form-group">
+              <label for="comment">Date (YYYY/MM/DD):</label>
+              <textarea method ="POST" name="date" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
+              <input type="submit"/>
+              </div>
+                            
               <div class="form-group">
               <label for="comment">Write Notes:</label>
               <textarea method ="POST" name="txt" class="form-control" onfocus="this.select()" rows="5" id="comment"></textarea>

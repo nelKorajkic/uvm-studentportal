@@ -4,7 +4,7 @@ require("includes/top.php");
 require("includes/nav.php");
 require("watsonServices.php");
 
-echo vardump($_SESSION['user']);
+var_dump($_SESSION['user']);
 
 
 if(isset($_POST['txt'])){
@@ -15,12 +15,12 @@ if(isset($_POST['txt'])){
        $date = $_POST['date'];
        
        
-       // var_dump($_SESSION['user']);
+       //var_dump($_SESSION['user']);
        //$userInputPlus = str_replace(' ', '+', $userInput);
        
           $db->beginTransaction();
-          $query = 'INSERT INTO tblNotes (fnkNetId,fnkCourseId, fldText, fldDate) VALUES ("'.$_SESSION['user'].'",'.$courseId.',"'.$userInput.'", '.$date.')';
-          echo vardump($_SESSION['user']);
+          $query = 'INSERT INTO tblNotes (fnkNetId,fnkCourseId, fldText, fldDate) VALUES ("'.$_SESSION['user'][pmkNetId].'",'.$courseId.',"'.$userInput.'", '.$date.')';
+          //echo vardump($_SESSION['user']);
           echo $query;
     $statement = $db->prepare($query);
     $statement->execute();

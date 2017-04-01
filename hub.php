@@ -1,6 +1,6 @@
 <?php
-include 'includes/top.php'
+include 'includes/top.php';
 include 'includes/nav.php';
-
-
-include 'includes/footer.php' ?>
+?>
+<p>Hello World</p>
+<?php include 'includes/footer.php' ?>

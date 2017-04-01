@@ -5,7 +5,7 @@
 <form action="addFile.php" method="POST" enctype="multipart/form-data">
 
 <table align="center">
-<body id = 'login'>
+<body id = 'uploadBackground'>
 <div class="container content-container">
 	<div class="row">
 		<div class="col-sm-12"  style="margin-top: 30px">
@@ -42,21 +42,21 @@
 							<input type="submit" name="upload" value="Browse"/>
 								</div>
 							</div>
-               
+
               <div class="form-group">
               <label for="comment">Notes Title:</label>
               <textarea method ="POST" name="title" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
-             
-              </div>              
-                            
+
+              </div>
+
               <div class="form-group">
               <label for="comment">Date (YYYYMMDD):</label>
               <textarea method ="POST" name="date" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
-             
+
               </div>
-              
-                            
-                            
+
+
+
               <div class="form-group">
               <label for="comment">Write Notes:</label>
               <textarea method ="POST" name="txt" class="form-control" onfocus="this.select()" rows="5" id="comment"></textarea>

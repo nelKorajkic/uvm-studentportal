@@ -1,6 +1,11 @@
+<style>
+
+  .applicationSubmissionText {
+    text-align: center;
+  }
+</style>
+
 <?php
-
-
 
 require("includes/top.php");
 $hashedCrn = $_GET['crn'];
@@ -69,8 +74,8 @@ Notetaker App
 =======
 Greetings
 
-$studentName would like to register for $className as a peer note taker. 
-    
+$studentName would like to register for $className as a peer note taker.
+
 If you would like to confirm their application, please click the link below:
 
 ----------------------------------
@@ -80,7 +85,7 @@ If you would like to confirm their application, please click the link below:
 ----------------------------------
 
 If you would not like to confirm their application, then you may disregard this message.
-</pre> 
+</pre>
 >>>>>>> f639d13879556fe90b7632261335ff853fc7794e
 
 </body>

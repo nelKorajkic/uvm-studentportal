@@ -25,10 +25,11 @@
     	<span aria-hidden="true">Login</span>
   	</a>
 
-		<a type="button" id="floatRight" class="btn btn-default" href="login.php">
+		<?php if (isset($_SESSION['user'])): ?>
+		<a type="button" id="floatRight" class="btn btn-default" href="logout.php">
     	<span aria-hidden="true">Logout</span>
   	</a>
-
+		<?php endif; ?>
 
 	<?php if (isset($_SESSION['user'])): ?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">

@@ -2,6 +2,7 @@
 <?php
 require("includes/top.php");
 require("includes/nav.php");
+require("watsonServices.php");
 
 if(isset($_POST['txt'])){
        $userInput = $_POST['txt'];
@@ -9,7 +10,8 @@ if(isset($_POST['txt'])){
        echo "original: " .$userInput;
        echo "<br>";
        echo watsonLanguageTranslate("en", "es", $userInput);
-       echo "end";
+       echo "<br>";
+       echo watsonNaturalLanguageUnderstanding($userInput);
        
 }
 

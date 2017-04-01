@@ -2,6 +2,14 @@
 {
   font-family: 'Fjalla One', sans-serif;
 }
+div.jumbotron{
+  border-bottom: 5px solid #0cb288;
+}
+#logoutBg{
+  height: 100vh;
+  width: 100vw;
+  background-color: #2E4057;
+}
 #floatRight{
   background: none;
   border: none;
@@ -19,7 +27,6 @@ nav.nav
 #logo{
   background-color: rgba(255, 0, 0, 0);
   width: 10%;
-  overflow: hidden;
   padding: 0;
   margin: 0;
   border-radius: 100%;

@@ -16,11 +16,12 @@
 	// Finally, destroy the session.
 	session_destroy();
 ?>
-<div class="container content-container">
+<div class="container content-container" id="logoutBg">
 	<div class="row">
-		<div class="col-sm-12"  style="margin-top: 30px">
-			<h4 class="text-center">Thank you for using our service.</h4>
-			<p class="text-center">Click <a href="login.php">here</a> to log in again</p>
+		<div class="jumbotron text-center">
+  <h1>Thanks for using NoTaker!</h1>
+  <p>Click on the button below to log in again</p>
+  <p><a class="btn btn-primary btn-lg" href="login.php" role="button">Login</a></p>
 		</div>
 	</div>
 </div>

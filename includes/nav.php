@@ -20,11 +20,17 @@
     <img src="images/smallLogo.png"></img>
   </a>
 
+
+
   <a type="button" id="floatRight" class="btn btn-default" href="login.php">
     <span aria-hidden="true">Login</span>
   </a>
 
+
+<?php
+	if (isset($_SESSION['user'])): ?>
   <a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">
     <span aria-hidden="true">Upload</span>
   </a>
+<?php endif; ?>
 </nav>

@@ -34,9 +34,9 @@
 
 	<?php
 	$status = isset($_SESSION['user']['fldStatus']) ? $_SESSION['user']['fldStatus'] : "";
-	if ($_SESSION['user']['fldStatus'] == 'N'): 
+	if ($_SESSION['user']['fldStatus'] == 'N'):
 	?>
-  	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">
+  	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align" href="uploadFile.php">
     	<span aria-hidden="true">Upload</span>
   	</a>
 	<?php endif; ?>

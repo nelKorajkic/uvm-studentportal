@@ -1,6 +1,6 @@
 <?php
-	define("DBUSER", "alongcha_admin");
-	define("DBNAME", "ALONGCHA_codefest");
-	define("DBHOST", "webdb.uvm.edu");
-	define("DBPASS", "8EEasd2FgyS8y1et");
+	define("DBUSER", "b7efbe277ec217");
+	define("DBNAME", "ad_877e945564c47c4");
+	define("DBHOST", "us-cdbr-iron-east-03.cleardb.net");
+	define("DBPASS", "12d7580d");
 ?>

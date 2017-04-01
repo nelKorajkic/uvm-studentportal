@@ -1,6 +1,7 @@
 <?php 
 	require("includes/top.php");
-	if($_POST["btnLogIn"] == "Log In"){
+	$submit = (isset($_POST["btnLogIn"])) ? $_POST["btnLogIn"] : "";
+	if($submit == "Log In"){
 		try{
 			$db->beginTransaction();
 			$query = "SELECT * FROM tblUsers WHERE pmkNetId = '" . $_POST['netId'] . "'";
@@ -15,7 +16,7 @@
 		
 		if(!empty($results)){
 			if($_POST['password'] == $results[0]['fldPassword']){
-				//
+				$errorMessage = "G8 m8";
 			}else{
 				$errorMessage = "Wrong Credentials";
 			}

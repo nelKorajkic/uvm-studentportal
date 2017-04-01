@@ -17,10 +17,7 @@ if(isset($_POST['txt'])){
     $statement->execute();
     $statement->fetchAll(PDO::FETCH_ASSOC);
     $db->commit();
-} catch (PDOException $e) {
-    $db->rollBack();
-    echo $e->getMessage();
-}
+ 
        echo "original: " .$userInput;
        echo "<br>";
        echo watsonLanguageTranslate("en", "es", urlencode($userInput));

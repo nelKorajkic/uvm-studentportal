@@ -1,0 +1,5 @@
+main green color: #0cb288
+main gray color: #4d635c
+main white color: #e5e5e5
+main dark blue: #2E4057
+lighter dark blue: #466184

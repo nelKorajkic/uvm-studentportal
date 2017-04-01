@@ -48,20 +48,23 @@ $confirmLink = "http://localhost:8888/uvm-studentportal/confirm.php?crn=" . $crn
 $message = "
 <html>
 <head>
-<title>Notetaker Application</title>
+<title>NoTaker Application</title>
 </head>
 <body>
 <pre style='font-family: sans-serif'>
-Hi, 
+Greetings
 
-" . $studentName . " is applying to be the notetaker for " . $className . "
+$studentName would like to register for $className as a peer note taker. 
     
-Click the link below to confirm:
-<a href='" . $confirmLink . "'>" . $confirmLink . "</a>
+If you would like to confirm their application, please click the link below:
 
-Best, 
+----------------------------------
 
-Notetaker App
+<a href='" . $confirmLink . "'>Confirm application</a>
+
+----------------------------------
+
+If you would not like to confirm their application, then you may disregard this message.
 </pre> 
 
 </body>

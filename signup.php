@@ -1,16 +1,5 @@
 <?php require("includes/top.php"); ?>
 <?php require("includes/nav.php"); ?>
-<style>
-
-	#login {
-		background: url('https://assets6.irisreading.com/wp-content/uploads/2014/11/note-taking.jpg') no-repeat center center fixed;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		margin: 0; padding: 0;
-	}
-</style>
 <body id = 'login'>
 <div class="container content-container">
 	<div class="row">

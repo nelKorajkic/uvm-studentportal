@@ -69,10 +69,17 @@ $temp = json_decode($json, true);
         </div>
     </div>
 </form>
-<h4 class="text-center"><?php echo $results[0]['fldTitle']; ?></h4>
-<div id="txtTranslate">
-    <p class="text-center" id="txtTranslate"><?php echo $results[0]['fldText']; ?></p>
+<h2 class="text-center "><?php echo $results[0]['fldTitle']; ?></h2>
+<div class="message" id="txtTranslate">
+    <style>
+      .noteMessage{
+        font-size: 12pt;
+        padding: 10px 0px 10px 0px;
+      }
+    </style>
+    <p class="text-justify noteMessage" id="txtTranslate"><?php echo $results[0]['fldText']; ?></p>
 </div>
+<div class="container">
 
 <table class="table table-default">
     <thead>
@@ -81,7 +88,7 @@ $temp = json_decode($json, true);
             <th>Relevance</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <?php
             foreach($temp['keywords'] as $k){
@@ -93,7 +100,7 @@ $temp = json_decode($json, true);
         ?>
     </tbody>
 </table>
+</div>
 <?php
 require("includes/footer.php");
 ?>
-

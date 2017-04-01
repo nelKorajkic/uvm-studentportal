@@ -2,8 +2,17 @@
 {
   font-family: 'Fjalla One', sans-serif;
 }
+#login > form > div > div > div > div > div.panel.panel-default{
+  border-bottom: 5px solid #0cb288;
+}
 div.jumbotron{
   border-bottom: 5px solid #0cb288;
+}
+.btn-primary{
+  background-color: #466184;
+}
+.btn-success {
+  background-color: #0cb288;
 }
 #logoutBg{
   height: 100vh;
@@ -17,7 +26,10 @@ div.jumbotron{
   text-transform: uppercase;
   font-size: 1.3em;
 }
-
+#indexLogin{
+  text-transform: uppercase;
+  background-color:
+}
 nav.nav
 {
   background-color: #2E4057;
@@ -69,7 +81,8 @@ body > nav > a:nth-child(1):active{
   margin-bottom: 15px;
 }
 
-#centerEmail {
-  width: 80%;
+.banner {
+  width: 100%;
+  display: block;
   margin: auto;
 }

@@ -2,7 +2,7 @@
       require("includes/nav.php");
       ?>
 
-<form action="viewFile.php" method="POST" enctype="multipart/form-data">
+<form action="addFile.php" method="POST" enctype="multipart/form-data">
 
 <table align="center">
 <body id = 'login'>
@@ -31,18 +31,29 @@
 
 							<div id="uploadBox" class="form-group">
 							  <label for="sel1">Select class:</label>
-							  <select class="form-control" id="sel1">
-							    <?php foreach ($_SESSION[courseNames] as $name): ?>
-							      <option><?php echo $name; ?></option>
-							    <?php endforeach; ?>
-							  </select>
+							 <select name="crn" class="form-control" id="sel1">
+                                                            <?php for($i = 0; $i < count($_SESSION['noteTakerClasses']); $i++): ?>
+                                                            <option value="<?php echo $_SESSION['noteTakerIds'][$i]; ?>"><?php echo $_SESSION['courseNames'][$i]; ?></option>
+                                                        <?php endfor; ?>
+                                                         </select>
 							</div>
 					<div class="panel-body">
 						<p>
 							<input type="submit" name="upload" value="Browse"/>
 								</div>
 							</div>
-
+                            
+              <div class="form-group">
+              <label for="comment">Date (YYYYMMDD):</label>
+              <textarea method ="POST" name="date" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
+             
+              </div>
+                            
+              <div class="form-group">
+              <label for="comment">Write Notes:</label>
+              <textarea method ="POST" name="txt" class="form-control" onfocus="this.select()" rows="5" id="comment"></textarea>
+              <input type="submit"/>
+              </div>
 						</form>
 					</div>
 
@@ -56,16 +67,6 @@
 <?php require("includes/footer.php"); ?>
 
 <br>
-<tr>
-	<td align="center">
 
-         <textarea name="txt" rows="28" cols="150" onfocus="this.select()"></textarea>
-         <br>
-         <input type="submit"/>
-         </td>
-         </tr>
-
-
-</form>
 
 <?php require("includes/footer.php"); ?>

@@ -1,6 +1,6 @@
 <?php require("includes/top.php"); ?>
+<?php require("includes/nav.php"); ?>
 <style>
-	
 
 	#login {
 		background: url('https://assets6.irisreading.com/wp-content/uploads/2014/11/note-taking.jpg') no-repeat center center fixed;

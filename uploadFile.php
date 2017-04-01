@@ -31,11 +31,11 @@
 
 							<div id="uploadBox" class="form-group">
 							  <label for="sel1">Select class:</label>
-							  <select class="form-control" id="sel1">
-							    <?php foreach ($_SESSION[courseNames] as $name): ?>
-							      <option><?php echo $name; ?></option>
-							    <?php endforeach; ?>
-							  </select>
+							 <select name="crn" class="form-control" id="sel1">
+                                                            <?php for($i = 0; $i < count($_SESSION['noteTakerClasses']); $i++): ?>
+                                                            <option value="<?php echo $_SESSION['noteTakerIds'][$i]; ?>"><?php echo $_SESSION['courseNames'][$i]; ?></option>
+                                                        <?php endfor; ?>
+                                                         </select>
 							</div>
 					<div class="panel-body">
 						<p>
@@ -59,7 +59,7 @@
 <tr>
 	<td align="center">
 
-         <textarea name="txt" rows="28" cols="150" onfocus="this.select()"></textarea>
+         <textarea method ="POST" name="txt" rows="28" cols="150" onfocus="this.select()"></textarea>
          <br>
          <input type="submit"/>
          </td>

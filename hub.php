@@ -12,7 +12,7 @@ if ($result->num_rows > 0)
       print '</td></tr>';
     }
   }
-}
+
 print '</table>';
 
 include 'includes/footer.php' ?>

@@ -25,6 +25,7 @@
   <link rel="icon"
       type="image/png"
       href="images/smallLogo.png">
+  <link rel="stylesheet" href="../css/style.css">
   <?php
 	require("includes/constant.php");
 	try{

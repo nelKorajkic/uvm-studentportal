@@ -17,7 +17,7 @@ $message = "
 <head>
 <title>Notaker Application Approved</title>
 </head>
-<body>
+<body id="centerEmail">
 <pre style='font-family: sans-serif'>
 Greetings,
 
@@ -30,9 +30,9 @@ To log in, please click the link below:
 
 ----------------------------------
 
-Thank you for registering. 
+Thank you for registering.
 
-</pre> 
+</pre>
 
 </body>
 </html>
@@ -56,7 +56,7 @@ try {
     echo "     " . $query . "     ";
     echo $stuId;
     echo $crn;
-    
+
     //SET fldNoteTaker = 'T' WHERE fnkNetId = '" . $stuId ."' AND fnkCourseId = '" . $crn . "'";
     $statement = $db->prepare($query);
     $statement->execute();

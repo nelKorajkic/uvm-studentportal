@@ -6,10 +6,9 @@ include 'includes/nav.php';
 <div id="selectBox" class="form-group">
   <label for="sel1">Select class:</label>
   <select class="form-control" id="sel1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
+    <?php foreach ($_SESSION[courseNames] as $name): ?>
+      <option><?php echo $name; ?></option>
+    <?php endforeach; ?>
   </select>
 </div>
 

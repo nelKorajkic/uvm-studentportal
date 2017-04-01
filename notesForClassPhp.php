@@ -39,7 +39,7 @@ try {
             echo "<tr class='text-center'>";
             echo "<td>" . $r['fldTitle'] . "</td>";
             echo "<td>" . $r['fldDate'] . "</td>";
-            echo "<td><a href='www.uvm.edu'>" . $r['fnkCourseId'] . "</td>";
+            echo "<td><a href='viewFile.php?id=$r[pmkNoteId]'>Link</a></td>";
             echo "</tr>";
         endforeach;
         ?>

@@ -9,9 +9,9 @@ if(isset($_POST['txt'])){
        //$userInputPlus = str_replace(' ', '+', $userInput);
        echo "original: " .$userInput;
        echo "<br>";
-       echo watsonLanguageTranslate("en", "es", $userInput);
+       echo watsonLanguageTranslate("en", "es", urlencode($userInput));
        echo "<br>";
-       echo watsonNaturalLanguageUnderstanding($userInput);
+       echo watsonNaturalLanguageUnderstanding(urlencode($userInput));
        
 }
 

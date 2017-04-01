@@ -3,7 +3,6 @@
 
 //This traslates text from source languge to target langage. words in text must be seprated by "+".
 function watsonLanguageTranslate ($sourcelanguage,$targetLanguage,$text){
-	$text = str_replace(' ','+',$text);
 $curl = curl_init();
 	$username = 'e42e3020-6ab2-4db6-862b-08283b7d8ebf';
     $password ='Ek4cpXsiNsk0';
@@ -24,9 +23,7 @@ echo $resp;
 //takes text and returns keywords and and sentiment from text file. text must have spaces. 
 function watsonNaturalLanguageUnderstanding ($text){
 	
-	$text=str_replace(" ","%",$text);
-	$text=str_replace(array(',','.',"[","]"),"",$text);
-	// $text="";
+
 	$curl = curl_init();
 	$username = '3d9cc69c-f78d-44bc-98c6-de5093146e7a';
     $password ='FCSQ7u4irTrw';

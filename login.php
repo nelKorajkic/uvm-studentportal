@@ -120,7 +120,6 @@
 </div>
 </body>
 <?php
-		require("includes/footer.php");
 	else:
 		header("Location:hub.php");
 	endif;

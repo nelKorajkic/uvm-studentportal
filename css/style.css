@@ -125,3 +125,16 @@ body > nav > a:nth-child(1):active{
     width: 70%;
     margin: auto;
   }
+
+  footer p
+  {
+    padding-top: 5px;
+    text-align: center;
+  }
+  footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}

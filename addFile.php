@@ -8,11 +8,13 @@ if(isset($_POST['txt'])){
        $userInput = $_POST['txt'];
        // $userId = $_POST['usrId'];
        $courseId = $_POST['crn'];
+       
+       $date = $_POST['date'];
        // var_dump($_SESSION['user']);
        //$userInputPlus = str_replace(' ', '+', $userInput);
        
           $db->beginTransaction();
-          $query = 'INSERT INTO tblNotes (fnkNetId,fnkCourseId, fldText) VALUES ("'.$_SESSION['user'].'",'.$courseId.'"'.$userInput.'")';
+          $query = 'INSERT INTO tblNotes (fnkNetId,fnkCourseId, fldText, fldDate) VALUES ("'.$_SESSION['user'].'",'.$courseId.'"'.$userInput.'", '.$date.')';
     $statement = $db->prepare($query);
     $statement->execute();
     $statement->fetchAll(PDO::FETCH_ASSOC);

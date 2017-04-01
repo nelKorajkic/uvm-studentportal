@@ -2,7 +2,7 @@
 <head>
 <title>Notaker Application Approved</title>
 </head>
-<body>
+<body id='centerEmail'>
 <pre style='font-family: sans-serif'>
 Greetings,
 
@@ -15,9 +15,9 @@ To log in, please click the link below:
 
 ----------------------------------
 
-Thank you for registering. 
+Thank you for registering.
 
-</pre> 
+</pre>
 
 </body>
 </html>

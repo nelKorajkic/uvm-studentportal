@@ -43,7 +43,7 @@ $studentName = $studentInfo[0]['fldFirstName'] . " " . $studentInfo[0]['fldLastN
 
 $to = $professorNetId . "@uvm.edu";
 $subject = $className . " Notetaker Application";
-$confirmLink = "http://localhost:8888/uvm-studentportal/confirm.php?crn=" . $crn . "&id=" . password_hash($studentID, PASSWORD_DEFAULT) . "&stuName=" . $studentName . "&class=" . $className .'&stuId= '. $studentID .'&pro='.$professorNetId;
+$confirmLink = "http://localhost:8888/uvm-studentportal/confirm.php?crn=" . $crn . "&id=" . password_hash($studentID, PASSWORD_DEFAULT) . "&stuName=" . $studentName . "&class=" . $className .'&stuId='. $studentID .'&pro='.$professorNetId;
 
 $message = "
 <html>

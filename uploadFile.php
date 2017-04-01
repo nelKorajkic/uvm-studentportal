@@ -17,7 +17,7 @@
 					</div>
 
 					<!-- BODY -->
-					<div class ="form-group">
+					<!-- <div class ="form-group">
 								<label class="control-label col-sm-3">Class:  </label>
 								<div class="col-sm-9">
 								<select name = "formClass">
@@ -27,6 +27,15 @@
 								<option value="Stats111">Stats111</option>
 								</select>
 								</div>
+							</div> -->
+
+							<div id="uploadBox" class="form-group">
+							  <label for="sel1">Select class:</label>
+							  <select class="form-control" id="sel1">
+							    <?php foreach ($_SESSION[courseNames] as $name): ?>
+							      <option><?php echo $name; ?></option>
+							    <?php endforeach; ?>
+							  </select>
 							</div>
 					<div class="panel-body">
 						<p>

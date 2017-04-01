@@ -8,6 +8,7 @@ if(isset($_POST['txt'])){
        //$userInputPlus = str_replace(' ', '+', $userInput);
        echo "original: " .$userInput;
        echo "watson: " .watsonLanguageTranslate("en", "es", $userInput);
+       echo "end";
        
 }
 

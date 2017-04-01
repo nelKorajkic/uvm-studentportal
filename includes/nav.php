@@ -32,7 +32,10 @@
   	</a>
 		<?php endif; ?>
 
-	<?php if ($_SESSION['user']['fldStatus'] == 'N'): ?>
+	<?php
+	$status = isset($_SESSION['user']['fldStatus']) ? $_SESSION['user']['fldStatus'] : "";
+	if ($_SESSION['user']['fldStatus'] == 'N'): 
+	?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">
     	<span aria-hidden="true">Upload</span>
   	</a>

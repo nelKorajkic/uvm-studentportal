@@ -10,9 +10,11 @@ div.jumbotron{
 }
 .btn-primary{
   background-color: #466184;
+  text-transform: uppercase;
 }
 .btn-success {
   background-color: #0cb288;
+  text-transform: uppercase;
 }
 #logoutBg{
   height: 100vh;
@@ -30,16 +32,18 @@ nav.nav
 {
   background-color: #2E4057;
   border-bottom: 5px solid #0cb288;
+  padding: 0;
 }
 
 #logo{
-  background-color: #232e3c;
-  width: 10%;
-  padding: 0;
+  background-color: #2E4057;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin: 0;
   border-radius: 10%;
   border: none;
 }
+
 body > nav > a:nth-child(1):hover{
   background: none;
 }
@@ -82,3 +86,34 @@ body > nav > a:nth-child(1):active{
   display: block;
   margin: auto;
 }
+
+.bannerContainer {
+ position: relative;
+ width: 100%; /* for IE 6 */
+ height: 50%;
+ border-bottom: 5px solid #0cb288;
+}
+
+.bannerText {
+ position: absolute;
+ top: 200px;
+ left: 0;
+ width: 100%;
+ color: white;
+ text-align: center;
+}
+
+  .bannerText h1 {
+    font-size: 32pt;
+  }
+
+  .bannerText h2 {
+    font-size: 26pt;
+  }
+
+  .message
+  {
+    font-size: 16pt;
+    width: 70%;
+    margin: auto;
+  }

@@ -1,5 +1,7 @@
 <?php
 
+
+
 require("includes/top.php");
 $hashedCrn = $_GET['crn'];
 
@@ -52,17 +54,17 @@ $message = "
 </head>
 <body>
 <pre style='font-family: sans-serif'>
-Hi, 
+Hi,
 
 " . $studentName . " is applying to be the notetaker for " . $className . "
-    
+
 Click the link below to confirm:
 <a href='" . $confirmLink . "'>" . $confirmLink . "</a>
 
-Best, 
+Best,
 
 Notetaker App
-</pre> 
+</pre>
 
 </body>
 </html>
@@ -80,7 +82,7 @@ mail($to, $subject, $message, $headers);
 
 include "includes/top.php";
 
-print "<h1>Your application has been submitted.</h1>";
+print "<h1 class='applicationSubmissionText'>Your application has been submitted.</h1>";
 
 include "includes/footer.php";
 ?>

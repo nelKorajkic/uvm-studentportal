@@ -1,0 +1,55 @@
+{
+    "cleardb": [
+        {
+            "credentials": {
+                "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_877e945564c47c4?user=b7efbe277ec217&password=12d7580d",
+                "uri": "mysql://b7efbe277ec217:12d7580d@us-cdbr-iron-east-03.cleardb.net:3306/ad_877e945564c47c4?reconnect=true",
+                "name": "ad_877e945564c47c4",
+                "hostname": "us-cdbr-iron-east-03.cleardb.net",
+                "port": "3306",
+                "username": "b7efbe277ec217",
+                "password": "12d7580d"
+            },
+            "syslog_drain_url": null,
+            "label": "cleardb",
+            "provider": null,
+            "plan": "spark",
+            "name": "ClearDB-ph",
+            "tags": [
+                "DBA",
+                "(P) Analytics",
+                "(S) Cloud",
+                "Platform",
+                "Bluemix",
+                "ibm_dedicated_public",
+                "Infrastructure",
+                "Service",
+                "data_management",
+                "Analytics",
+                "IT Operations",
+                "ibm_third_party"
+            ]
+        }
+    ],
+    "weatherinsights": [
+        {
+            "credentials": {
+                "username": "cca9d1d1-d938-4258-b02e-11f88084ec49",
+                "password": "aWpylaJkVC",
+                "host": "twcservice.mybluemix.net",
+                "port": 443,
+                "url": "https://cca9d1d1-d938-4258-b02e-11f88084ec49:aWpylaJkVC@twcservice.mybluemix.net"
+            },
+            "syslog_drain_url": null,
+            "label": "weatherinsights",
+            "provider": null,
+            "plan": "Free-v2",
+            "name": "Weather Company Data-ph",
+            "tags": [
+                "big_data",
+                "ibm_created",
+                "ibm_dedicated_public"
+            ]
+        }
+    ]
+}

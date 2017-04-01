@@ -1,15 +1,25 @@
 <?php 
 	require("includes/top.php");
-	try{
-		$db->beginTransaction();
-		$query = "SELECT * FROM tblUsers";
-		$statement = $db->prepare($query);
-		$statement->execute();
-		var_dump($statement->fetchAll(PDO::FETCH_ASSOC));
-		$db->commit();
-	}catch(PDOException $e){
-		$db->rollBack();
-		echo $e->getMessage();
+	if($_POST["btnLogIn"] == "Log In"){
+		try{
+			$db->beginTransaction();
+			$query = "SELECT * FROM tblUsers WHERE pmkNetId = '" . $_POST['netId'] . "'";
+			$statement = $db->prepare($query);
+			$statement->execute();
+			$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+			$db->commit();
+		}catch(PDOException $e){
+			$db->rollBack();
+			echo $e->getMessage();
+		}
+		
+		if(!empty($results)){
+			if($_POST['password'] == $results[0]['fldPassword']){
+				//
+			}else{
+				$errorMessage = "Wrong Credentials";
+			}
+		}
 	}
 ?>
 <style>
@@ -35,11 +45,16 @@
 					
 					<!-- BODY -->
 					<div class="panel-body">
-						<form class="form-horizontal" action="" mehtod="post">
+						<?php
+							if(!empty($errorMessage)){
+								echo "<h4 class='text-center' style='color:red'>$errorMessage</h4>";
+							}
+						?>
+						<form class="form-horizontal" action="" method="post">
 							<div class="form-group">
 								<label class="control-label col-sm-3">Net ID</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" placeholder="Please enter your NetID....." name="netID" value="tnguye20">
+									<input type="text" class="form-control" placeholder="Please enter your NetID....." name="netId" value="tnguye20">
 								</div>
 							</div>
 							

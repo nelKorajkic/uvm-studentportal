@@ -19,7 +19,7 @@
 			if(!empty($results)){
 				if($_POST['password'] == $results[0]['fldPassword']){
 					$_SESSION["user"] = $results[0];
-					
+
 					try{
 						$db->beginTransaction();
 						$query = "SELECT fnkCourseId FROM tblUsersClasses WHERE fnkNetId = '" . $_POST['netId'] . "'";
@@ -31,24 +31,24 @@
 						$db->rollBack();
 						echo $e->getMessage();
 					}
-					
+
 					$courseNames = array();
 					$ids = array();
-					
+
 					foreach($courseIds as $course){
 						$query = "SELECT fldDepartment, fldCourseNum FROM tblClasses WHERE pmkCourseId = '". $course['fnkCourseId'] . "'";
 						$statement = $db->prepare($query);
 						$statement->execute();
 						$temp = $statement->fetchAll(PDO::FETCH_ASSOC);
-						$courseNames[] = $temp[0]['fldDepartment'] . " " . $temp[0]["fldCourseNum"]; 
+						$courseNames[] = $temp[0]['fldDepartment'] . " " . $temp[0]["fldCourseNum"];
 						$ids[] = $course['fnkCourseId'];
 					}
-					
+
 					$query = "SELECT fnkCourseId FROM tblUsersClasses WHERE fnkNetId = '" . $_POST['netId'] . "' AND fldNoteTaker = 'T'";
 					$statement = $db->prepare($query);
 					$statement->execute();
 					$temp2 = $statement->fetchAll(PDO::FETCH_ASSOC);
-					
+
 					$noteTakerClasses = array();
 					$noteTakerIds = array();
 					foreach($temp2 as $t){
@@ -57,9 +57,9 @@
 						$statement->execute();
 						$a = $statement->fetchAll(PDO::FETCH_ASSOC);
 						$noteTakerClasses[] = $a[0]['fldDepartment'] . " " . $a[0]["fldCourseNum"];
-						$noteTakerIds[] = $t['fnkCourseId'];				
+						$noteTakerIds[] = $t['fnkCourseId'];
 					}
-					
+
 					$_SESSION['courseIds'] = $ids;
 					$_SESSION['noteTakerIds'] = $noteTakerIds;
 					$_SESSION['courseNames'] = $courseNames;
@@ -73,6 +73,7 @@
 			}
 		}
 ?>
+
 <body id = 'login'>
 <div class="container content-container">
 	<div class="row">
@@ -81,7 +82,7 @@
 				<div class="panel panel-default">
 					<!-- HEADER -->
 					<div class="panel-heading">
-						<h4 class="text-center">Welcome to NoteTaker</h4>
+						<h4 class="text-center">Welcome to NoTaker</h4>
 					</div>
 
 					<!-- BODY -->
@@ -106,13 +107,13 @@
 								</div>
 							</div>
 					</div>
-
 					<!-- FOOTER -->
 					<div class="panel-footer">
 							<p class="text-right"><input type="submit" class="btn btn-success" value="Log In" name="btnLogIn"></p>
 						</form>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>

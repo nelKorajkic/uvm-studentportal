@@ -44,7 +44,7 @@
 							</div>
                             
               <div class="form-group">
-              <label for="comment">Date (YYYY/MM/DD):</label>
+              <label for="comment">Date (YYYYMMDD):</label>
               <textarea method ="POST" name="date" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
               <input type="submit"/>
               </div>

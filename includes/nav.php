@@ -1,20 +1,3 @@
-<style>
-	.nav {
-		background-color: black;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-	}
-  .nav a {
-    margin-left: 5px;
-    margin-right: 5px;
-
-  }
-  .nav #floatRight {
-    float: right;
-  }
-</style>
-
 <nav class="nav">
   <a class="btn btn-default" aria-label="Left Align">
     <img src="images/smallLogo.png"></img>
@@ -34,7 +17,7 @@
 
 	<?php
 	$status = isset($_SESSION['user']['fldStatus']) ? $_SESSION['user']['fldStatus'] : "";
-	if ($status == 'N'): 
+	if ($status == 'N'):
 	?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align" href="uploadFile.php">
     	<span aria-hidden="true">Upload</span>

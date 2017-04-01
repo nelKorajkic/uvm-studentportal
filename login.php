@@ -1,7 +1,18 @@
-<?php require("includes/top.php"); ?>
+<?php 
+	require("includes/top.php");
+	try{
+		$db->beginTransaction();
+		$query = "SELECT * FROM tblUsers";
+		$statement = $db->prepare($query);
+		$statement->execute();
+		var_dump($statement->fetchAll(PDO::FETCH_ASSOC));
+		$db->commit();
+	}catch(PDOException $e){
+		$db->rollBack();
+		echo $e->getMessage();
+	}
+?>
 <style>
-	
-
 	#login {
 		background: url('https://assets6.irisreading.com/wp-content/uploads/2014/11/note-taking.jpg') no-repeat center center fixed;
 		-webkit-background-size: cover;
@@ -38,12 +49,12 @@
 									<input type="password" class="form-control" placeholder="Please enter your password....." name="password" value="aaaaaa">
 								</div>
 							</div>
-						</form>
 					</div>
 					
 					<!-- FOOTER -->
 					<div class="panel-footer">
-						<p class="text-right"><input type="submit" class="btn btn-success" value="Log In" name="logIn"></p>
+							<p class="text-right"><input type="submit" class="btn btn-success" value="Log In" name="btnLogIn"></p>
+						</form>
 					</div>
 				</div>
 			</div>

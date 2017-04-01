@@ -21,5 +21,13 @@
   <title>Notaker</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <?php 
+	require("includes/constant.php");
+	try{
+		$db = new PDO("mysql:host=" . DBHOST . ";dbname=". DBNAME,DBUSER,DBPASS);
+	}catch(PDOException $e){
+		echo $e->getMessage();
+	}
+  ?>
 </head>
+<body>

@@ -17,7 +17,7 @@ $curl = curl_init();
 ));
 $resp = curl_exec($curl);
 curl_close($curl);
-echo $resp;
+return $resp;
 }
 
 //takes text and returns keywords and and sentiment from text file. text must have spaces. 

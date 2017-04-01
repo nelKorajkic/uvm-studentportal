@@ -47,20 +47,26 @@ $headers .= 'From: <' . $professorNetId . '@uvm.edu>' . "\r\n";
 //$headers .= 'Cc: myboss@example.com' . "\r\n";
 $subject = "Notetaker Application Approved";
 mail($to, $subject, $message, $headers);
-
+//require("includes/top.php");
 try {
     $db->beginTransaction();
-    $query = "INSERT INTO tblUsersClasses (fldNoteTaker, fnkNetId, fnkCourseId) VALUES ('T', '" . $stuId . "'," . $crn . ")";
+//    $query = "UPDATE tblUsersClasses SET fldNoteTaker = 'T' WHERE fnkNetId = '$stuId'";// AND fnkCourseId = " . $crn;
+    echo $query;
+    $query = "INSERT INTO tblUsersClasses (fldNoteTaker, fnkNetId, fnkCourseId) VALUES ('T', '" .$stuId . "'," . $crn . ")";
+    echo "     " . $query . "     ";
     echo $stuId;
     echo $crn;
+    
     //SET fldNoteTaker = 'T' WHERE fnkNetId = '" . $stuId ."' AND fnkCourseId = '" . $crn . "'";
     $statement = $db->prepare($query);
     $statement->execute();
+//    var_dump($statement);
     $statement->fetchAll(PDO::FETCH_ASSOC);
     $db->commit();
 } catch (PDOException $e) {
     $db->rollBack();
     echo $e->getMessage();
 }
-include 'includes/footer.php'
+echo "test";
+include 'includes/footer.php';
 ?>

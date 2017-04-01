@@ -2,6 +2,9 @@
 {
   font-family: 'Fjalla One', sans-serif;
 }
+#login > form > div > div > div > div > div.panel.panel-default{
+  border-bottom: 5px solid #0cb288;
+}
 div.jumbotron{
   border-bottom: 5px solid #0cb288;
 }

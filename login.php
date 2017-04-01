@@ -1,4 +1,16 @@
 <?php require("includes/top.php"); ?>
+<style>
+	{ margin: 0; padding: 0; }
+
+	#login {
+		background: url('https://assets6.irisreading.com/wp-content/uploads/2014/11/note-taking.jpg') no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+</style>
+<body id = 'login'>
 <div class="container content-container">
 	<div class="row">
 		<div class="col-sm-12"  style="margin-top: 30px">
@@ -37,4 +49,5 @@
 		</div>
 	</div>
 </div>
+</body>
 <?php require("includes/footer.php"); ?>

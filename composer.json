@@ -1,6 +1,7 @@
 ﻿{
     "require": {
         "php": "7.0.*",
-        "ext-mysqli": "*"
+        "ext-mysqli": "*",
+        "ext-gd":"*"
     }
 }

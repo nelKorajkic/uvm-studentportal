@@ -28,16 +28,18 @@ try {
 <table class="table">
     <thead>
         <tr>
-            <th>Date Submitted</th>
-            <th>File Link</th>
+            <th class="text-center">Title</th>
+            <th class="text-center">Date Submitted</th>
+            <th class="text-center">File Link</th>
         </tr>
     </thead>
     <tbody>
         <?php
         foreach ($results as $r):
-            echo "<tr>";
+            echo "<tr class='text-center'>";
+            echo "<td>" . $r['fldTitle'] . "</td>";
             echo "<td>" . $r['fldDate'] . "</td>";
-            echo "<td>" . $r['fnkCourseId'] . "</td>";
+            echo "<td><a href='www.uvm.edu'>" . $r['fnkCourseId'] . "</td>";
             echo "</tr>";
         endforeach;
         ?>

@@ -1,6 +1,9 @@
 <?php require("includes/top.php");
-      require("includes/nav.php"); ?>
+      require("includes/nav.php"); 
+      ?>
 
+<form action="viewFile.php" method="POST" enctype="multipart/form-data">
+    
 <table align="center">
 <body id = 'login'>
 <div class="container content-container">
@@ -19,8 +22,8 @@
 								<div class="col-sm-9">
 								<select name = "formClass">
 								<option value="">Select...</option>
-								<option value="Bio001">Bio001</option>
-								<option value="CS205">CS205</option>
+								<option value="96445">96445</option>
+								<option value="12345">12345</option>
 								<option value="Stats111">Stats111</option>
 								</select>	
 								</div>
@@ -45,7 +48,7 @@
 
 <br>
 <tr>
-	<td align="center"><form action="viewFile.php" method="POST" enctype="multipart/form-data">
+	<td align="center">
 		
          <textarea name="txt" rows="28" cols="150" onfocus="this.select()"></textarea>
          <br>

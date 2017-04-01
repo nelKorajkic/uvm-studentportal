@@ -20,10 +20,11 @@
     <img src="images/smallLogo.png"></img>
   </a>
 
-
+	<?php if (!isset($_SESSION['user'])): ?>
   	<a type="button" id="floatRight" class="btn btn-default" href="login.php">
     	<span aria-hidden="true">Login</span>
   	</a>
+		<?php endif; ?>
 
 		<?php if (isset($_SESSION['user'])): ?>
 		<a type="button" id="floatRight" class="btn btn-default" href="logout.php">
@@ -31,7 +32,7 @@
   	</a>
 		<?php endif; ?>
 
-	<?php if (isset($_SESSION['user'])): ?>
+	<?php if ($_SESSION['user']['fldStatus'] == 'N'): ?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align">
     	<span aria-hidden="true">Upload</span>
   	</a>

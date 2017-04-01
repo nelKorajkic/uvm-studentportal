@@ -18,7 +18,38 @@
 
 			if(!empty($results)){
 				if($_POST['password'] == $results[0]['fldPassword']){
-					$_SESSION["user"] = $results[0];
+					//$_SESSION["user"] = $results[0];
+					
+					try{
+						$db->beginTransaction();
+						$query = "SELECT fnkCourseId FROM tblUsersClasses WHERE fnkNetId = '" . $_POST['netId'] . "'";
+						$statement = $db->prepare($query);
+						$statement->execute();
+						$courseIds = $statement->fetchAll(PDO::FETCH_ASSOC);
+						$db->commit();
+					}catch(PDOException $e){
+						$db->rollBack();
+						echo $e->getMessage();
+					}
+					
+					$courseNames = array();
+					
+					foreach($courseIds as $course){
+						$query = "SELECT fldDepartment, fldCourseNum FROM tblClasses WHERE pmkCourseId = '". $course['fnkCourseId'] . "'";
+						$statement = $db->prepare($query);
+						$statement->execute();
+						$temp = $statement->fetchAll(PDO::FETCH_ASSOC);
+						$courseNames[] = $temp[0]['fldDepartment'] . " " . $temp[0]["fldCourseNum"]; 
+					}
+					
+					$query = "SELECT fnkCourseId FROM tblUsersClasses WHERE fnkNetId = '" . $_POST['netId'] . "' AND fldNoteTaker = 'T'";
+					$statement = $db->prepare($query);
+					$statement->execute();
+					$temp2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+					
+					$_SESSION['noteTaker'] = $temp2;
+					$_SESSION['courseNames'] = $courseNames;
+					
 					session_write_close();
 
 					header("Location:hub.php");

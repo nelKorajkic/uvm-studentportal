@@ -1,13 +1,13 @@
+<?php
+require("includes/top.php");
+?>
 <style>
 
   .applicationSubmissionText {
     text-align: center;
   }
 </style>
-
-<?php
-
-require("includes/top.php");
+<?PHP
 $hashedCrn = $_GET['crn'];
 
 try {
@@ -21,10 +21,11 @@ try {
     $db->rollBack();
     echo $e->getMessage();
 }
+//
+// print "<pre>";
+// print_r($_SESSION);
+// print "</pre>";
 
-print "<pre>";
-print_r($classInfo);
-print "</pre>";
 $studentID = $_SESSION['user']['pmkNetId'];
 
 try {
@@ -41,7 +42,7 @@ try {
 
 
 $professorNetId = $classInfo[0]['fnkProfessorNetId'];
-echo $professorNetId;
+// echo $professorNetId;
 $crn = $classInfo[0]['pmkCourseId'];
 
 $className = $classInfo[0]['fldDepartment'] . " " . $classInfo[0]['fldCourseNum'] . " " . $classInfo[0]['fldSection'];
@@ -59,7 +60,6 @@ $message = "
 </head>
 <body>
 <pre style='font-family: sans-serif'>
-<<<<<<< HEAD
 Hi,
 
 " . $studentName . " is applying to be the notetaker for " . $className . "
@@ -86,7 +86,6 @@ If you would like to confirm their application, please click the link below:
 
 If you would not like to confirm their application, then you may disregard this message.
 </pre>
->>>>>>> f639d13879556fe90b7632261335ff853fc7794e
 
 </body>
 </html>
@@ -97,14 +96,15 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <' . $studentID . '@uvm.edu>' . "\r\n";
+ $headers .= 'From: <' . $studentID . '@uvm.edu>' . "\r\n";
+//$headers .= 'From: <alexdbeard@gmail.com>' . "\r\n";
+
 //$headers .= 'Cc: myboss@example.com' . "\r\n";
 
 mail($to, $subject, $message, $headers);
 
-include "includes/top.php";
-
-print "<h1 class='applicationSubmissionText'>Your application has been submitted.</h1>";
-
-include "includes/footer.php";
+// include "includes/top.php";
 ?>
+<div class="row" id="logoutBg">
+  <div class="jumbotron text-center">
+    <h1 class='applicationSubmissionText'>Your application has been submitted.</h1>;

@@ -77,7 +77,7 @@ $temp = json_decode($json, true);
         padding: 10px 0px 10px 0px;
       }
     </style>
-    <p class="text-justify noteMessage" id="txtTranslate"><?php echo $results[0]['fldText']; ?></p>
+    <p class="text-justify" id="txtTranslate"><?php echo $results[0]['fldText']; ?></p>
 </div>
 <div class="container">
 
@@ -101,6 +101,3 @@ $temp = json_decode($json, true);
     </tbody>
 </table>
 </div>
-<?php
-require("includes/footer.php");
-?>

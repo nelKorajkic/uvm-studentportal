@@ -1,7 +1,7 @@
 <?php
 require("includes/top.php");
 require("watsonServices.php");
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,9 +21,8 @@ try {
     echo $e->getMessage();
 }
 if($lan !== "en"){
-    echo watsonLanguageTranslate("en", $lan, urlencode($results[0]['fldText']));
+    echo "<p class='text-justify noteMessage'>" . watsonLanguageTranslate("en", $lan, urlencode($results[0]['fldText'])) . "</p>";
 }else{
-    echo $results[0]['fldText'];
+    echo "<p class='text-justify noteMessage'>" . $results[0]['fldText'] . "</p>";
 }
 ?>
-

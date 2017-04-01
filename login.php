@@ -16,7 +16,10 @@
 		
 		if(!empty($results)){
 			if($_POST['password'] == $results[0]['fldPassword']){
-				$errorMessage = "G8 m8";
+				$_SESSION["user"] = $results[0];
+				session_write_close();
+				
+				header("Location:hub.php");
 			}else{
 				$errorMessage = "Wrong Credentials";
 			}

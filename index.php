@@ -1,5 +1,8 @@
 <?php include 'includes/top.php' ?>
 <?php include 'includes/nav.php' ?>
+
+<img src="images/banner.jpg" class="banner"></img>
+
 <table align="center">
 <tr>
 <td align="center">
@@ -8,10 +11,10 @@
 		<div class="col-xl-8-main">
   			<h1 align='center'>Welcome to UVM Notaker</h1>
   			<br>
-  			<p1 class="Access login">If you are an ACCESS student in need of notes, please log in. 
+  			<h3 class="Access login">If you are an ACCESS student in need of notes, please log in.
   			<br>
   			<form method="Link" action="http://localhost/uvm-studentportal/login.php">
-  			<input type="submit" value="Log in"/>
+  			<p><a class="btn btn-primary btn-lg" href="login.php" role="button">Login</a></p>
   			<br>
   			<br>
   			<br>

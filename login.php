@@ -50,20 +50,22 @@
 					$temp2 = $statement->fetchAll(PDO::FETCH_ASSOC);
 					
 					$noteTakerClasses = array();
+					$noteTakerIds = array();
 					foreach($temp2 as $t){
 						$query = "SELECT fldDepartment, fldCourseNum FROM tblClasses WHERE pmkCourseId = '". $t['fnkCourseId'] . "'";
 						$statement = $db->prepare($query);
 						$statement->execute();
 						$a = $statement->fetchAll(PDO::FETCH_ASSOC);
-						$noteTakerClasses[] = $a[0]['fldDepartment'] . " " . $a[0]["fldCourseNum"]; 
+						$noteTakerClasses[] = $a[0]['fldDepartment'] . " " . $a[0]["fldCourseNum"];
+						$noteTakerIds[] = $t['fnkCourseId'];				
 					}
 					
 					$_SESSION['courseIds'] = $ids;
-					$_SESSION['noteTakerIds'] = $temp2;
+					$_SESSION['noteTakerIds'] = $noteTakerIds;
 					$_SESSION['courseNames'] = $courseNames;
 					$_SESSION['noteTakerClasses'] = $noteTakerClasses;
 					session_write_close();
-					
+
 					header("Location:hub.php");
 				}else{
 					$errorMessage = "Wrong Credentials";

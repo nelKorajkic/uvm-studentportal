@@ -5,7 +5,7 @@ $hashedCrn = $_GET['crn'];
 
 try {
     $db->beginTransaction();
-    $query = "SELECT fnkProfessorNetId, pmkCRN, fldDepartment, fldCourseNum, fldSection FROM tblClasses where fldToken LIKE '" . $hashedCrn . "%'";
+    $query = "SELECT fnkProfessorNetId, pmkCourseId, fldDepartment, fldCourseNum, fldSection FROM tblClasses where fldToken LIKE '" . $hashedCrn . "%'";
     $statement = $db->prepare($query);
     $statement->execute();
     $classInfo = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +35,7 @@ try {
 
 $professorNetId = $classInfo[0]['fnkProfessorNetId'];
 echo $professorNetId;
-$crn = $classInfo[0]['pmkCRN'];
+$crn = $classInfo[0]['pmkCourseId'];
 
 $className = $classInfo[0]['fldDepartment'] . " " . $classInfo[0]['fldCourseNum'] . " " . $classInfo[0]['fldSection'];
 

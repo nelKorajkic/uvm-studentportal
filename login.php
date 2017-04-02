@@ -18,7 +18,7 @@
 
 			if(!empty($results)){
 				if($_POST['password'] == $results[0]['fldPassword']){
-					//$_SESSION["user"] = $results[0];
+					$_SESSION["user"] = $results[0];
 					
 					try{
 						$db->beginTransaction();
@@ -33,6 +33,7 @@
 					}
 					
 					$courseNames = array();
+					$ids = array();
 					
 					foreach($courseIds as $course){
 						$query = "SELECT fldDepartment, fldCourseNum FROM tblClasses WHERE pmkCourseId = '". $course['fnkCourseId'] . "'";
@@ -40,6 +41,7 @@
 						$statement->execute();
 						$temp = $statement->fetchAll(PDO::FETCH_ASSOC);
 						$courseNames[] = $temp[0]['fldDepartment'] . " " . $temp[0]["fldCourseNum"]; 
+						$ids[] = $course['fnkCourseId'];
 					}
 					
 					$query = "SELECT fnkCourseId FROM tblUsersClasses WHERE fnkNetId = '" . $_POST['netId'] . "' AND fldNoteTaker = 'T'";
@@ -47,11 +49,21 @@
 					$statement->execute();
 					$temp2 = $statement->fetchAll(PDO::FETCH_ASSOC);
 					
-					$_SESSION['noteTaker'] = $temp2;
-					$_SESSION['courseNames'] = $courseNames;
+					$noteTakerClasses = array();
+					foreach($temp2 as $t){
+						$query = "SELECT fldDepartment, fldCourseNum FROM tblClasses WHERE pmkCourseId = '". $t['fnkCourseId'] . "'";
+						$statement = $db->prepare($query);
+						$statement->execute();
+						$a = $statement->fetchAll(PDO::FETCH_ASSOC);
+						$noteTakerClasses[] = $a[0]['fldDepartment'] . " " . $a[0]["fldCourseNum"]; 
+					}
 					
+					$_SESSION['courseIds'] = $ids;
+					$_SESSION['noteTakerIds'] = $temp2;
+					$_SESSION['courseNames'] = $courseNames;
+					$_SESSION['noteTakerClasses'] = $noteTakerClasses;
 					session_write_close();
-
+					
 					header("Location:hub.php");
 				}else{
 					$errorMessage = "Wrong Credentials";

@@ -20,7 +20,7 @@
 		<?php endif; ?>
 
 	<?php
-	$noteTaker = isset($_SESSION['noteTaker']) ? $_SESSION['noteTaker'] : "";
+	$noteTaker = isset($_SESSION['noteTakerIds']) ? $_SESSION['noteTakerIds'] : "";
 	if ($noteTaker !== ""):
 	?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align" href="uploadFile.php">

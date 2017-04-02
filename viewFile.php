@@ -4,25 +4,37 @@ require("includes/top.php");
 require("includes/nav.php");
 require("watsonServices.php");
 
-$userInput = "Ancient influences have helped spawn variant interpretations of the nature of history which have evolved over the centuries and continue to change today. The modern study of history is wide-ranging, and includes the study of specific regions and the study of certain topical or thematical elements of historical investigation. Often history is taught as part of primary and secondary education, and the academic study of history is a major discipline in university studies.";
-$class = 12345;
+$fileId = 29;
 
-echo $_POST["txt"];
-echo $_POST["crn"];
+try {
+    require("includes/top.php");
+    $db->beginTransaction();
+    $query = "SELECT * FROM tblNotes WHERE pmkNoteId =" . $fileId;
+
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//                    print"<pre>";
+//                    print_r($results);
+//                    print "</pre>";
+//                    
+    $db->commit();
+} catch (PDOException $e) {
+    $db->rollBack();
+    echo $e->getMessage();
+}
 
 
-       
-        echo $userInput;
-        echo "<br>";
-        echo $class;
-        echo "<br>";
+
+
     
        //$userInputPlus = str_replace(' ', '+', $userInput);
-       echo "original: " .$userInput;
+       echo "original: " .$results[0]['fldText'];
        echo "<br>";
-       echo "spanish: " .watsonLanguageTranslate("en", "es", urlencode($userInput));
+       echo "spanish: " .watsonLanguageTranslate("en", "es", urlencode($results[0]['fldText']));
        echo "<br>";
-       echo watsonNaturalLanguageUnderstanding(urlencode($userInput));
+       echo watsonNaturalLanguageUnderstanding(urlencode($results[0]['fldText']));
        
        
 

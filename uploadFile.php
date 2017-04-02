@@ -42,12 +42,20 @@
 							<input type="submit" name="upload" value="Browse"/>
 								</div>
 							</div>
+               
+              <div class="form-group">
+              <label for="comment">Notes Title:</label>
+              <textarea method ="POST" name="title" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
+             
+              </div>              
                             
               <div class="form-group">
               <label for="comment">Date (YYYYMMDD):</label>
               <textarea method ="POST" name="date" class="form-control" onfocus="this.select()" rows="1" id="comment"></textarea>
              
               </div>
+              
+                            
                             
               <div class="form-group">
               <label for="comment">Write Notes:</label>

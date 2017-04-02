@@ -16,8 +16,8 @@
 		<?php endif; ?>
 
 	<?php
-	$status = isset($_SESSION['user']['fldStatus']) ? $_SESSION['user']['fldStatus'] : "";
-	if ($status == 'N'):
+	$status = isset($_SESSION['user']['fldAccess']) ? $_SESSION['user']['fldAccess'] : "";
+	if ($status == 'T'):
 	?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align" href="uploadFile.php">
     	<span aria-hidden="true">Upload</span>

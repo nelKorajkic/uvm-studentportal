@@ -20,8 +20,8 @@
 		<?php endif; ?>
 
 	<?php
-	$status = isset($_SESSION['user']['fldAccess']) ? $_SESSION['user']['fldAccess'] : "";
-	if ($status == 'T'):
+	$noteTaker = isset($_SESSION['noteTaker']) ? $_SESSION['noteTaker'] : "";
+	if ($noteTaker !== ""):
 	?>
   	<a type="button" id="floatRight" class="btn btn-default" aria-label="Left Align" href="uploadFile.php">
     	<span aria-hidden="true">Upload</span>

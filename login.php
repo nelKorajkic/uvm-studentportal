@@ -51,6 +51,7 @@
 					$_SESSION['courseNames'] = $courseNames;
 					
 					session_write_close();
+
 					header("Location:hub.php");
 				}else{
 					$errorMessage = "Wrong Credentials";
